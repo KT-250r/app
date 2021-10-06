@@ -71,7 +71,7 @@ func dbGetAll() []Todo {
 
 //DB get
 func dbGetOne(id int) Todo {
-    db, err != gorm.Open("sqlite3", "test.sqlite3")
+	db, err := gorm.Open("sqlite3", "test.sqlite3")
 }
 
 func main() {
