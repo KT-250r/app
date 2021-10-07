@@ -16,7 +16,7 @@ type Todo struct {
 
 //DB init
 func dbInit() {
-	db, err := gorm.Open("sqlite3", "test.sqliete3") //第一引数：使用するDBデバイス、第二引数：ファイル名
+	db, err := gorm.Open("sqlite3", "test.sqlite3") //第一引数：使用するDBデバイス、第二引数：ファイル名
 	if err != nil {
 		panic("DB cant open..!(dbInit)")
 	}
@@ -67,7 +67,7 @@ func dbGetAll() []Todo {
 		panic("DB cant open...!(dbGetAll())")
 	}
 	var todos []Todo
-	db.Order("created_at_desc").Find(&todos)
+	db.Order("created_at desc").Find(&todos)
 	db.Close()
 	return todos
 }
